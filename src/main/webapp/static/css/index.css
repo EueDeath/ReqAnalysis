@@ -1,0 +1,103 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+body{
+	background-image: url(../img/blue.jpg);
+	background-size: 100% 100%;
+    background-attachment: fixed;
+    color: #fff;
+    text-shadow: 0 0 3px rgba(255,255,255,.4);
+    font-family: open-sans-light,sans-serif;
+    font-size: 14px;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+th{
+	font-weight: normal;
+}
+.tile-title {
+    font-size: 14px;
+    text-transform: uppercase;
+    display: inline-block;
+    margin: 0;
+    width: 100%;
+    line-height: 30px;
+    font-weight: normal;
+}
+.tile, .tile-dark, .tile-title, .table th {
+    background: rgba(0,0,0,.35);
+}
+.table {
+    width: 100%;
+    max-width: 100%;
+}
+.mt1{
+	margin-top: 1%;
+}
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+.table>thead>tr>th {
+    font-weight: 400;
+    text-transform: uppercase;
+    border-bottom: 0;
+    text-align: left;
+    line-height: 30px;
+        padding: 0 8px;
+
+}
+.table > tbody > tr > td {
+    line-height: 1.42857143;
+        padding: 0 8px;
+        border-top: 1px solid rgba(255,255,255,.05);
+}
+.content{
+	width: 98%;
+    margin: 0 auto;
+    height: 100%;
+}
+.mytable th,.mytable td{
+	background: transparent !important;
+	text-align: left;
+}
+.mytable{
+	width: 100%;
+}
+.mytable td{
+	padding: 5px 0px;
+}
+.b_r{
+	border-right: 1px solid rgba(255,255,255,.05);
+}
+
+.b_r1{
+	border-right: 1px solid rgba(255,255,255,.05);
+	color: #58fb0b;
+}
+
+.left{
+	width: 60%;
+	float: left;
+	margin: 1% 0;
+}
+.chart{
+	width: 38%;
+	height: 100%;
+	float: right;
+	    margin: 1% 0;
+}
+.item{
+	width: 100%;
+	height: 32%;
+}
+.charthei{
+	width: 100%;
+}
+.f_color1{
+	color: #ffc107;
+}

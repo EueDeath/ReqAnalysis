@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.asiainfo.requirement.dao.ReqDao">
+
+	<select id="getIssueComponentsByPro" parameterType="java.lang.String" resultType="java.lang.String">
+		select
+		distinct
+		issue_components
+		from
+		graphlist1
+		<where>
+			project_key = #{s}	
+		</where>
+	</select>
+	
+	<select id="getCostByComAndPro" resultType="java.lang.String">
+		select
+		cost_time
+		from
+		graphlist1
+		<where>
+                issue_components = #{c}
+                and 
+                project_key = #{p}	
+		</where>
+	</select>
+	
+	<select id="getProjectKey" resultType="java.lang.String">
+		select
+		distinct
+		project_key
+		from
+		graphlist1	
+	</select>
+	
+	<select id="getIssueByComAndPro" resultType="Issue">
+		select 
+		create_time,
+		update_time
+		from
+		graphlist1
+		<where>
+                issue_components = #{c}
+                and 
+                project_key = #{p}
+		</where>
+	</select>
+	
+	<select id="getMonNees" resultType="java.lang.Integer">
+		select
+		count(*) as monSum
+		from
+		graphlist1
+		<where>
+         	create_time like "%"#{mon}"%"
+		</where>
+	</select>
+	
+	<select id="getMonCost" resultType="java.lang.String">
+		select
+		cost_time
+		from
+		graphlist1
+		<where>
+         	create_time like "%"#{mon}"%"
+		</where>
+	</select>
+	
+	<select id="getListByComAndPro" resultType="java.lang.Integer">
+		select
+		count(*) as sumNeeds
+		from
+		graphlist1
+		<where>
+                issue_components = #{c}
+                and 
+                project_key = #{p}	
+		</where>
+	</select>
+	
+	<select id="getMonPublish1" parameterType="java.lang.String" resultType="java.lang.Integer">
+		select
+		count(*)
+		from
+		jira_data
+		<where>
+			release_date like "%"#{mon1}"%"
+		</where>
+	</select>
+	
+	<select id="getMonPublish2" parameterType="java.lang.String" resultType="java.lang.Integer">
+		select
+		count(*)
+		from
+		jira_data
+		<where>
+			release_date = '' 
+			and 
+			closed_date like "%"#{mon1}"%"
+		</where>
+	</select>
+
+</mapper>
